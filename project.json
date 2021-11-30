@@ -3,11 +3,13 @@
   "description": "Blank Process",
   "main": "Main.xaml",
   "dependencies": {
+    "ActivitiesDataTable": "[1.0.0]",
     "BalaReva.DataTable.Activities": "[3.0.1]",
     "BalaReva.ZipUnzip.Activities": "[2020.4.3]",
     "BalaReva.ZipUnzipGz.Activities": "[2.0.0]",
     "E5.Utils.ACME": "[1.0.6]",
     "E5.Utils.EmailNotification": "[1.0.1]",
+    "Element5.Core": "[1.2.26-alpha.1]",
     "UiPath.Excel.Activities": "[2.11.4]",
     "UiPath.Mail.Activities": "[1.12.2]",
     "UiPath.PDF.Activities": "[3.4.1]",
@@ -19,7 +21,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "21.10.0.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.1",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,

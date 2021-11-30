@@ -12,7 +12,6 @@
     "Acme_FinalStatus" : "Final Status",
     "ReportFilePath" : "Data\\Report.xlsx",
     "ReportSheetName" : "report",
-    "WIIDPath" : "C:\\Users\\anilk\\OneDrive\\Documents\\UiPath\\E5_Assignment_Library_Code\\E5 Assignment Task\\WIID",
     "FolderName" : "WIID",
     "ChooseYear" : "2018",
     "Acme_NavigateURL" : "https://acme-test.uipath.com/work-items/",
@@ -31,7 +30,9 @@
     "EmailSubject" : "E5 Bot generated Report on <Date>",
     "EmailBody" : "Hi Team, PFA, for the Bot generated Status Report file along with the WIID files attached in ZIP.",
     "UserCredentials" : "EmailCredentials",
-    "UserName" : "Anil"
+    "UserName" : "Anil",
+    "BotSuccessStatus" : "Success",
+    "BotFailedStatus" : "Failed"
   },
   "STAGE":{
     "FilePath":"XYZ_Stage",
