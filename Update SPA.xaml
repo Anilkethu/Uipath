@@ -14,7 +14,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1153.33333333333,5877.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1153.33333333333,5777.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>UpdateSPA_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -84,17 +84,18 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="UpdateSPA" sap:VirtualizedContainerService.HintSize="741.333333333333,5812.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="UpdateSPA" sap:VirtualizedContainerService.HintSize="743.333333333333,5712.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="699.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Update SPA Started&quot;]" />
-    <Sequence DisplayName="Process_Results" sap:VirtualizedContainerService.HintSize="699.333333333333,5453.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_17">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="701.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Update SPA Started&quot;]" />
+    <Sequence DisplayName="Process_Results" sap:VirtualizedContainerService.HintSize="701.333333333333,5351.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_17">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Default="ResultRecords" Modifiers="ReadOnly" Name="RESULT_RECORDS" />
         <Variable x:TypeArguments="ui:GenericValue" Name="SummaryInfoJSON" />
@@ -112,7 +113,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Get Existing Results" sap:VirtualizedContainerService.HintSize="657.333333333333,1013.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_11">
+      <Sequence DisplayName="Get Existing Results" sap:VirtualizedContainerService.HintSize="659.333333333333,1013.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_11">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -175,14 +176,14 @@
           </TryCatch.Catches>
         </TryCatch>
       </Sequence>
-      <Sequence DisplayName="Construct ResultsRecord and Summary" sap:VirtualizedContainerService.HintSize="657.333333333333,4308" sap2010:WorkflowViewState.IdRef="Sequence_16">
+      <Sequence DisplayName="Construct ResultsRecord and Summary" sap:VirtualizedContainerService.HintSize="659.333333333333,4206" sap2010:WorkflowViewState.IdRef="Sequence_16">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence DisplayName="Construct Result Records" sap:VirtualizedContainerService.HintSize="615.333333333333,1115.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_12">
+        <Sequence DisplayName="Construct Result Records" sap:VirtualizedContainerService.HintSize="617.333333333333,1118" sap2010:WorkflowViewState.IdRef="Sequence_12">
           <Sequence.Variables>
             <Variable x:TypeArguments="njl:JArray" Name="ResultsArray" />
             <Variable x:TypeArguments="scg:List(njl:JObject)" Name="JSONList" />
@@ -269,7 +270,7 @@
                     <OutArgument x:TypeArguments="x:Int32">[Failed]</OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:Int32">[If(Record("Bot Status").ToString.Trim = "Failed",Failed+1,Failed)]</InArgument>
+                    <InArgument x:TypeArguments="x:Int32">[If(Record("Final Status").ToString.Trim = "Failed",Failed+1,Failed)]</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_83">
@@ -277,7 +278,7 @@
                     <OutArgument x:TypeArguments="x:Int32">[Success]</OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:Int32">[If(Record("Bot Status").ToString.Trim= "Success",Success+1,Success)]</InArgument>
+                    <InArgument x:TypeArguments="x:Int32">[If(Record("Final Status").ToString.Trim= "Success",Success+1,Success)]</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_84">
@@ -285,7 +286,7 @@
                     <OutArgument x:TypeArguments="x:Int32">[Skipped]</OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:Int32">[If(Record("Bot Status").ToString.Trim = "need review",Skipped+1,Skipped)]</InArgument>
+                    <InArgument x:TypeArguments="x:Int32">[If(Record("Final Status").ToString.Trim = "need review",Skipped+1,Skipped)]</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
               </scg:List>
@@ -326,10 +327,10 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:MultipleAssign>
-          <eus:Set_Generic_Value DisplayName="Store Result Record JSON" sap:VirtualizedContainerService.HintSize="430.4,134.4" sap2010:WorkflowViewState.IdRef="Set_Generic_Value_4" Key="[RESULT_RECORDS]" Value="[ResultRecordsJSON]" __Prefix="[IO.Directory.GetCurrentDirectory]" />
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="430.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_43" Level="Trace" Message="[&quot;Stored Result Records&quot;]" />
+          <eus:Set_Generic_Value DisplayName="Store Result Record JSON" sap:VirtualizedContainerService.HintSize="431.333333333333,135.333333333333" sap2010:WorkflowViewState.IdRef="Set_Generic_Value_4" Key="[RESULT_RECORDS]" Value="[ResultRecordsJSON]" __Prefix="[IO.Directory.GetCurrentDirectory]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="431.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_43" Level="Trace" Message="[&quot;Stored Result Records&quot;]" />
         </Sequence>
-        <Sequence DisplayName="Construct Summary" sap:VirtualizedContainerService.HintSize="615.2,1189.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
+        <Sequence DisplayName="Construct Summary" sap:VirtualizedContainerService.HintSize="617.333333333333,1178.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_13">
           <Sequence.Variables>
             <Variable x:TypeArguments="njl:JObject" Name="Summary" />
             <Variable x:TypeArguments="x:String" Name="Message" />
@@ -344,7 +345,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:MultipleAssign DisplayName="Deserialize Summary Info" sap:VirtualizedContainerService.HintSize="430.4,226.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_11">
+          <ui:MultipleAssign DisplayName="Deserialize Summary Info" sap:VirtualizedContainerService.HintSize="431.333333333333,222" sap2010:WorkflowViewState.IdRef="MultipleAssign_11">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_58">
@@ -398,7 +399,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:MultipleAssign>
-          <ui:MultipleAssign DisplayName="Update Summary Info" sap:VirtualizedContainerService.HintSize="430.4,226.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_12">
+          <ui:MultipleAssign DisplayName="Update Summary Info" sap:VirtualizedContainerService.HintSize="431.333333333333,222" sap2010:WorkflowViewState.IdRef="MultipleAssign_12">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                 <ui:AssignOperation sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AssignOperation_63">
@@ -450,7 +451,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:MultipleAssign>
-          <ui:MultipleAssign DisplayName="Serialize Summary Info" sap:VirtualizedContainerService.HintSize="430.4,256.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_13">
+          <ui:MultipleAssign DisplayName="Serialize Summary Info" sap:VirtualizedContainerService.HintSize="431.333333333333,252.666666666667" sap2010:WorkflowViewState.IdRef="MultipleAssign_13">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_68">
@@ -510,10 +511,10 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:MultipleAssign>
-          <eus:Set_Generic_Value DisplayName="Store Summary Info" sap:VirtualizedContainerService.HintSize="430.4,134.4" sap2010:WorkflowViewState.IdRef="Set_Generic_Value_5" Key="[SUMMARY_INFO]" Value="[SummaryInfoJSON]" __Prefix="[IO.Directory.GetCurrentDirectory]" />
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="430.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_42" Level="Trace" Message="[&quot;Stored Summary Info&quot;]" />
+          <eus:Set_Generic_Value DisplayName="Store Summary Info" sap:VirtualizedContainerService.HintSize="431.333333333333,135.333333333333" sap2010:WorkflowViewState.IdRef="Set_Generic_Value_5" Key="[SUMMARY_INFO]" Value="[SummaryInfoJSON]" __Prefix="[IO.Directory.GetCurrentDirectory]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="431.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_42" Level="Trace" Message="[&quot;Stored Summary Info&quot;]" />
         </Sequence>
-        <Sequence DisplayName="Updating Summary Result" sap:VirtualizedContainerService.HintSize="615.2,1831.2" sap2010:WorkflowViewState.IdRef="Sequence_15">
+        <Sequence DisplayName="Updating Summary Result" sap:VirtualizedContainerService.HintSize="617.333333333333,1737.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_15">
           <Sequence.Variables>
             <Variable x:TypeArguments="s:String[]" Name="FieldNames" />
             <Variable x:TypeArguments="ui:GenericValue" Name="SummaryInfo" />
@@ -532,7 +533,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <TryCatch DisplayName="Get Summary Info" sap:VirtualizedContainerService.HintSize="573.6,365.6" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+          <TryCatch DisplayName="Get Summary Info" sap:VirtualizedContainerService.HintSize="575.333333333333,373.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_7">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -540,10 +541,10 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <eus:Get_Generic_Value DisplayName="Get Generic Value" ErrorOnKeyMiss="True" sap:VirtualizedContainerService.HintSize="283.2,134.4" sap2010:WorkflowViewState.IdRef="Get_Generic_Value_6" Key="[SUMMARY_INFO]" Value="[SummaryInfo]" __Prefix="[IO.Directory.GetCurrentDirectory]" />
+              <eus:Get_Generic_Value DisplayName="Get Generic Value" ErrorOnKeyMiss="True" sap:VirtualizedContainerService.HintSize="284,135.333333333333" sap2010:WorkflowViewState.IdRef="Get_Generic_Value_6" Key="[SUMMARY_INFO]" Value="[SummaryInfo]" __Prefix="[IO.Directory.GetCurrentDirectory]" />
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_8">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -554,12 +555,12 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                   </ActivityAction.Argument>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_27" Level="Warn" Message="[&quot;Failed to get summary Info&quot;+exception.Message]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_27" Level="Warn" Message="[&quot;Failed to get summary Info&quot;+exception.Message]" />
                 </ActivityAction>
               </Catch>
             </TryCatch.Catches>
           </TryCatch>
-          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="573.6,288.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_14">
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="575.333333333333,283.333333333333" sap2010:WorkflowViewState.IdRef="MultipleAssign_14">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_74">
@@ -627,27 +628,27 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:MultipleAssign>
-          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterates each Fieldnames for the array and assign the value to it." DisplayName="For Each" sap:VirtualizedContainerService.HintSize="573.6,565.6" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[FieldNames]">
+          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterates each Fieldnames for the array and assign the value to it." DisplayName="For Each" sap:VirtualizedContainerService.HintSize="575.333333333333,466" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[FieldNames]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="x:String">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:String" Name="item" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="538.4,409.6" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="538.666666666667,307.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_14">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[item.ToString.ToLower]" sap:VirtualizedContainerService.HintSize="496.8,316.8" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[item.ToString.ToLower]" sap:VirtualizedContainerService.HintSize="496.666666666667,215.333333333333" sap2010:WorkflowViewState.IdRef="Switch`1_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign x:Key="total" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                    <Assign x:Key="total" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_6">
                       <Assign.To>
                         <OutArgument x:TypeArguments="njl:JToken">[SummaryResult("Total")]</OutArgument>
                       </Assign.To>
@@ -655,7 +656,7 @@
                         <InArgument x:TypeArguments="njl:JToken">[TotalRecords]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Assign x:Key="success" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                    <Assign x:Key="success" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_7">
                       <Assign.To>
                         <OutArgument x:TypeArguments="njl:JToken">[SummaryResult("Success")]</OutArgument>
                       </Assign.To>
@@ -663,7 +664,7 @@
                         <InArgument x:TypeArguments="njl:JToken">[Success]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Assign x:Key="failed" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                    <Assign x:Key="failed" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_8">
                       <Assign.To>
                         <OutArgument x:TypeArguments="njl:JToken">[SummaryResult("Failed")]</OutArgument>
                       </Assign.To>
@@ -671,7 +672,7 @@
                         <InArgument x:TypeArguments="njl:JToken">[Failed]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Assign x:Key="skipped" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                    <Assign x:Key="skipped" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_9">
                       <Assign.To>
                         <OutArgument x:TypeArguments="njl:JToken">[SummaryResult("Skipped")]</OutArgument>
                       </Assign.To>
@@ -691,7 +692,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:ForEach>
-          <Assign sap:VirtualizedContainerService.HintSize="573.6,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+          <Assign sap:VirtualizedContainerService.HintSize="575.333333333333,62" sap2010:WorkflowViewState.IdRef="Assign_10">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[SummaryResultJson]</OutArgument>
             </Assign.To>
@@ -699,17 +700,17 @@
               <InArgument x:TypeArguments="x:String">[SummaryResult.ToString(Newtonsoft.Json.Formatting.None)]</InArgument>
             </Assign.Value>
           </Assign>
-          <eus:Set_Generic_Value sap2010:Annotation.AnnotationText="Stores summary result data." DisplayName="Store Summary Result" sap:VirtualizedContainerService.HintSize="573.6,165.6" sap2010:WorkflowViewState.IdRef="Set_Generic_Value_6" Key="[SUMMARY_RESULT]" Value="[SummaryResultJson]" __Prefix="[IO.Directory.GetCurrentDirectory]">
+          <eus:Set_Generic_Value sap2010:Annotation.AnnotationText="Stores summary result data." DisplayName="Store Summary Result" sap:VirtualizedContainerService.HintSize="575.333333333333,166" sap2010:WorkflowViewState.IdRef="Set_Generic_Value_6" Key="[SUMMARY_RESULT]" Value="[SummaryResultJson]" __Prefix="[IO.Directory.GetCurrentDirectory]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </eus:Set_Generic_Value>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="573.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_41" Level="Trace" Message="[&quot;Stored Summary Result&quot;]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="575.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_41" Level="Trace" Message="[&quot;Stored Summary Result&quot;]" />
         </Sequence>
       </Sequence>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="698.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Update SPA Ended&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="701.333333333333,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Update SPA Ended&quot;]" />
   </Sequence>
 </Activity>
