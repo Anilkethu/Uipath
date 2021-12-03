@@ -14,7 +14,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1436.66666666667,6661.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1436.66666666667,6568.66666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Checking_Year_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="47">
@@ -105,10 +105,9 @@
       <AssemblyReference>BalaReva.Zip</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Checking_Year  And Updating Comments" sap:VirtualizedContainerService.HintSize="1446.66666666667,6596.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Checking_Year  And Updating Comments" sap:VirtualizedContainerService.HintSize="1446.66666666667,6504" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="WIID" />
       <Variable x:TypeArguments="x:String" Name="strWIID" />
@@ -165,13 +164,13 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" ColumnCount="10" DataTable="[In_ExtractDataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1404.66666666667,4676.66666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" ColumnCount="10" DataTable="[In_ExtractDataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1404.66666666667,4584" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1370.66666666667,4552.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1370.66666666667,4460" sap2010:WorkflowViewState.IdRef="Sequence_14">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -185,14 +184,14 @@
                 <InArgument x:TypeArguments="x:Int32">[Cint(CurrentRow("Date").tostring.split("-"c)(0))]</InArgument>
               </Assign.Value>
             </Assign>
-            <If sap2010:Annotation.AnnotationText="Search if the year is above 2018" Condition="[SplitYear&gt;=cint(in_ConfigJObject(in_configJObject(&quot;env&quot;).ToString)(&quot;ChooseYear&quot;).ToString)]" DisplayName="Checking Date Year" sap:VirtualizedContainerService.HintSize="1328.66666666667,4358.66666666667" sap2010:WorkflowViewState.IdRef="If_2">
+            <If sap2010:Annotation.AnnotationText="Search if the year is above 2018" Condition="[SplitYear&gt;=cint(in_ConfigJObject(in_configJObject(&quot;env&quot;).ToString)(&quot;ChooseYear&quot;).ToString)]" DisplayName="Checking Date Year" sap:VirtualizedContainerService.HintSize="1328.66666666667,4266" sap2010:WorkflowViewState.IdRef="If_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="1292,4143.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="1292,4050.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -270,7 +269,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:BrowserScope>
-                  <If sap2010:Annotation.AnnotationText="If check request available it will download the pdf file,change the status, update work item and if check request not available it will just change the status, update work item" Condition="[bCheckRequest]" DisplayName="Clicking On Download Request" sap:VirtualizedContainerService.HintSize="1250,3136.66666666667" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If sap2010:Annotation.AnnotationText="If check request available it will download the pdf file,change the status, update work item and if check request not available it will just change the status, update work item" Condition="[bCheckRequest]" DisplayName="Clicking On Download Request" sap:VirtualizedContainerService.HintSize="1250,3044" sap2010:WorkflowViewState.IdRef="If_1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -279,7 +278,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="602,2942" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <Sequence sap:VirtualizedContainerService.HintSize="602,2849.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -319,13 +318,13 @@
                           </ui:Click.Target>
                         </ui:Click>
                         <e:UpdateWorkItems DownloadStatus="Downloaded" sap:VirtualizedContainerService.HintSize="560,80.6666666666667" sap2010:WorkflowViewState.IdRef="UpdateWorkItems_1" />
-                        <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Updating the page" sap:VirtualizedContainerService.HintSize="560,2236.66666666667" sap2010:WorkflowViewState.IdRef="WindowScope_3" InformativeScreenshot="38a9ccca35fb40115eeaba85281fc01b" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='ACME System 1 - Work Items - Google Chrome' /&gt;">
+                        <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Updating the page" sap:VirtualizedContainerService.HintSize="560,2144" sap2010:WorkflowViewState.IdRef="WindowScope_3" InformativeScreenshot="38a9ccca35fb40115eeaba85281fc01b" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='ACME System 1 - Work Items - Google Chrome' /&gt;">
                           <ui:WindowScope.Body>
                             <ActivityAction x:TypeArguments="x:Object">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,2090.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,1998" sap2010:WorkflowViewState.IdRef="Sequence_7">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -344,9 +343,9 @@
                                     </ui:Target>
                                   </ui:UiElementExists.Target>
                                 </ui:UiElementExists>
-                                <If Condition="[ExtractItems]" DisplayName="Getting required data" sap:VirtualizedContainerService.HintSize="484,1644.66666666667" sap2010:WorkflowViewState.IdRef="If_4">
+                                <If Condition="[ExtractItems]" DisplayName="Getting required data" sap:VirtualizedContainerService.HintSize="484,1552" sap2010:WorkflowViewState.IdRef="If_4">
                                   <If.Then>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="376,1463.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                    <Sequence sap:VirtualizedContainerService.HintSize="376,1370.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_18">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -375,31 +374,6 @@
                                           <InArgument x:TypeArguments="x:String">[in_ConfigJObject(in_configJObject("env").ToString)("BotSuccessStatus").ToString]</InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                                        <ui:CommentOut.Body>
-                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,154" sap2010:WorkflowViewState.IdRef="Sequence_49">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <Assign DisplayName="For status" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_59">
-                                              <Assign.To>
-                                                <OutArgument x:TypeArguments="x:String">[NewStatus]</OutArgument>
-                                              </Assign.To>
-                                              <Assign.Value>
-                                                <InArgument x:TypeArguments="x:String">[WorkItem.Substring(WorkItem.IndexOf("Status:")+"Status:".Length).Split(Environment.NewLine.ToCharArray)(0)]</InArgument>
-                                              </Assign.Value>
-                                            </Assign>
-                                          </Sequence>
-                                        </ui:CommentOut.Body>
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </ui:CommentOut>
                                       <Assign DisplayName="For download status" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_35">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="x:String">[DownloadStatus]</OutArgument>

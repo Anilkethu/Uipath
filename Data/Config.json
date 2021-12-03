@@ -32,7 +32,11 @@
     "UserCredentials" : "EmailCredentials",
     "UserName" : "Anil",
     "BotSuccessStatus" : "Success",
-    "BotFailedStatus" : "Failed"
+    "BotFailedStatus" : "Failed",
+    "E5Hook_URL" : "E5HookUrl",
+    "E5HookCredential" : "AutomationHubCredential",
+    "E5ProcessName" : "Download Work Item Details",
+    "E5TaskName" : "Download Work Item Details"
   },
   "STAGE":{
     "FilePath":"XYZ_Stage",

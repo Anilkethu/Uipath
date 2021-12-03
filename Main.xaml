@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1153.33333333333,6242.66666666667" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:d="clr-namespace:DataTableActivities;assembly=DataTableActivities" xmlns:eue="clr-namespace:Element5_Core.Utils.Exception;assembly=Element5.Core" xmlns:euhe="clr-namespace:Element5_Core.Utils.Hooks.Execution_Hooks;assembly=Element5.Core" xmlns:eus="clr-namespace:Element5_Core.Utils.Store;assembly=Element5.Core" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1153.33333333333,6902" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:d="clr-namespace:DataTableActivities;assembly=DataTableActivities" xmlns:eue="clr-namespace:Element5_Core.Utils.Exception;assembly=Element5.Core" xmlns:euhe="clr-namespace:Element5_Core.Utils.Hooks.Execution_Hooks;assembly=Element5.Core" xmlns:eus="clr-namespace:Element5_Core.Utils.Store;assembly=Element5.Core" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="61">
       <x:String>System.Activities</x:String>
@@ -65,7 +65,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="80">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="40">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -108,35 +108,26 @@
       <AssemblyReference>DataTableActivities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="598.666666666667,6178" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="598.666666666667,6837.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="DataTable" />
-      <Variable x:TypeArguments="x:Int32" Name="SplitYear" />
-      <Variable x:TypeArguments="x:String" Name="UrlOp" />
-      <Variable x:TypeArguments="ss:SecureString" Name="AcmePassword" />
-      <Variable x:TypeArguments="x:String" Name="EmailAdress" />
-      <Variable x:TypeArguments="x:String" Name="splitId" />
-      <Variable x:TypeArguments="ui:GenericValue" Name="Grouping" />
-      <Variable x:TypeArguments="x:String" Name="WIID" />
-      <Variable x:TypeArguments="x:String" Name="Dt" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="Config" />
       <Variable x:TypeArguments="njl:JObject" Name="JSON_Config" />
       <Variable x:TypeArguments="x:String" Name="ClientName" />
       <Variable x:TypeArguments="x:String" Name="DeepLink" />
-      <Variable x:TypeArguments="x:String" Default="https://api-dev.e5.ai/" Name="E5HookURL" />
+      <Variable x:TypeArguments="x:String" Name="E5HookURL" />
       <Variable x:TypeArguments="njl:JObject" Name="FlowConfig" />
-      <Variable x:TypeArguments="ss:SecureString" Default="[new System.Net.NetworkCredential(string.Empty, &quot;HkSeS1mgm00d&quot;).SecurePassword]" Name="HookPassword" />
-      <Variable x:TypeArguments="x:String" Default="botadmin@e5-training.ai" Name="HookUserName" />
+      <Variable x:TypeArguments="ss:SecureString" Name="HookPassword" />
+      <Variable x:TypeArguments="x:String" Name="HookUserName" />
       <Variable x:TypeArguments="x:String" Name="ProcessIdentifier" />
-      <Variable x:TypeArguments="x:String" Default="Download Work Item Details" Name="ProcessName" />
+      <Variable x:TypeArguments="x:String" Name="ProcessName" />
       <Variable x:TypeArguments="ui:GenericValue" Name="ResultRecords" />
       <Variable x:TypeArguments="njl:JArray" Name="ResultRecordsArray" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="SummaryFieldNames" />
       <Variable x:TypeArguments="x:String" Name="SummaryMessage" />
-      <Variable x:TypeArguments="x:String" Default="Download Work Item Details" Name="TaskName" />
+      <Variable x:TypeArguments="x:String" Name="TaskName" />
       <Variable x:TypeArguments="x:String" Name="TaskRunID" />
       <Variable x:TypeArguments="sd:DataTable" Name="NewData" />
-      <Variable x:TypeArguments="x:String" Name="ResultRecordsString" />
       <Variable x:TypeArguments="x:String" Name="JsonString" />
       <Variable x:TypeArguments="njl:JArray" Name="ConverterJsonArray" />
       <Variable x:TypeArguments="x:String" Name="OutputJsonFile" />
@@ -167,6 +158,33 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InitConfigJSON workflow" sap:VirtualizedContainerService.HintSize="556.666666666667,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Init_Workflows\InitConfigJSON.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="njl:JObject" x:Key="out_ConfigObject">[JSON_Config]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[JSON_Config(JSON_Config(&quot;env&quot;).ToString)(&quot;E5HookCredential&quot;).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="556.666666666667,80.6666666666667" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[HookPassword]" Username="[HookUserName]" />
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[JSON_Config(JSON_Config(&quot;env&quot;).ToString)(&quot;E5Hook_URL&quot;).ToString]" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="556.666666666667,140.666666666667" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[E5HookURL]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <Assign sap:VirtualizedContainerService.HintSize="556.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[ProcessName]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[JSON_Config(JSON_Config("env").ToString)("E5ProcessName").ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="556.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[TaskName]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[JSON_Config(JSON_Config("env").ToString)("E5TaskName").ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
     <euhe:Begin_Task_Execution ClientName="[ClientName]" DeepLink="[DeepLink]" DisplayName="Begin Task Execution" FlowConfig="[FlowConfig]" sap:VirtualizedContainerService.HintSize="556.666666666667,354" HookPassword="[HookPassword]" HookURL="[E5HookURL]" HookUserName="[HookUserName]" sap2010:WorkflowViewState.IdRef="Begin_Task_Execution_1" ProcessIdentifier="[ProcessIdentifier]" ProcessName="[ProcessName]" SummaryFieldNames="[SummaryFieldNames]" TaskName="[TaskName]" TaskRunIdentifier="[TaskRunID]" __Prefix="[IO.Directory.GetCurrentDirectory]" />
     <Sequence DisplayName="Log Outputs" sap:VirtualizedContainerService.HintSize="556.666666666667,668" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
@@ -182,9 +200,9 @@
       <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="229.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[SummaryFieldNames.ToArray.ToString]" />
       <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="229.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[TaskRunID]" />
     </Sequence>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InitConfigJSON workflow" sap:VirtualizedContainerService.HintSize="556.666666666667,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Init_Workflows\InitConfigJSON.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CloseAllApplications workflow" sap:VirtualizedContainerService.HintSize="556.666666666667,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="CloseAllApplications.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="njl:JObject" x:Key="out_ConfigObject">[JSON_Config]</OutArgument>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="In this workflow launch the browser and typing the credentials to login to the Acme site" DisplayName="Invoke EAcmeLogin workflow" sap:VirtualizedContainerService.HintSize="556.666666666667,159.333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="EAcmeLogin.xaml">
@@ -280,8 +298,6 @@
     <Sequence DisplayName="Generate Result Records" sap:VirtualizedContainerService.HintSize="556.666666666667,511.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="ResultRecordsString" />
-        <Variable x:TypeArguments="x:String" Name="UseJsonString" />
-        <Variable x:TypeArguments="njl:JObject" Name="NewJsonString" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -325,10 +341,6 @@
     <Sequence DisplayName="End the Hooks" sap:VirtualizedContainerService.HintSize="556.666666666667,1931.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="SummaryResult" />
-        <Variable x:TypeArguments="s:String[]" Name="FieldNames" />
-        <Variable x:TypeArguments="x:String" Name="SummaryResultJson" />
-        <Variable x:TypeArguments="njl:JArray" Name="ResultRecordArray" />
-        <Variable x:TypeArguments="ui:GenericValue" Name="ResultRecordsJSON" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -349,7 +361,6 @@
         <Sequence DisplayName="Fetch Info from Store" sap:VirtualizedContainerService.HintSize="472.666666666667,587.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <Sequence.Variables>
             <Variable x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" Name="ValueStore" />
-            <Variable x:TypeArguments="x:String" Name="variable1" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
