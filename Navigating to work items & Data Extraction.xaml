@@ -48,7 +48,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="30">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="60">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -79,6 +79,7 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="" sap:VirtualizedContainerService.HintSize="518,2306" sap2010:WorkflowViewState.IdRef="Sequence_4">
@@ -203,12 +204,12 @@
       <ui:FilterDataTable DataTable="[Out_ExtractDataTable]" DisplayName="Filtering the Data" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,162.666666666667" sap2010:WorkflowViewState.IdRef="FilterDataTable_4" OutputDataTable="[Out_ExtractDataTable]" SelectColumnsMode="Remove">
         <ui:FilterDataTable.Filters>
           <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
-            <ui:FilterOperationArgument BooleanOperator="And" Operator="NOTSTARTSWITH">
+            <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
               <ui:FilterOperationArgument.Column>
                 <InArgument x:TypeArguments="x:String">["Date"]</InArgument>
               </ui:FilterOperationArgument.Column>
               <ui:FilterOperationArgument.Operand>
-                <InArgument x:TypeArguments="x:String">["2017"]</InArgument>
+                <InArgument x:TypeArguments="x:String">[in_ConfigJObject(in_configJObject("env").ToString)("ChooseYear").ToString]</InArgument>
               </ui:FilterOperationArgument.Operand>
             </ui:FilterOperationArgument>
           </scg:List>
